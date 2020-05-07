@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client</title>
+  <title>Mon app</title>
 </head>
 <body>
 
@@ -12,12 +12,16 @@
 
   <script type="text/javascript">
     let hero = document.getElementById('hero');
+    let getUrl = window.location;
+    let protocole = getUrl.protocol;
+    let host = getUrl.host;
+    let url = `${protocole}//${host}/infos`;
 
-    fetch('/infos').then(response => {
+    fetch(url).then(response => {
       return response.json();
     }).then(json => {
       hero.innerText = json.hero;
-    });        
+    }).catch();        
 
   </script>
 </body>
