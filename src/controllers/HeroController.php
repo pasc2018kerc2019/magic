@@ -12,12 +12,6 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
-$app->get('/plop', function (Request $request, Response $response, $args) {
-    $response->getBody()->write(file_get_contents('./src/views/plop.php'));
-
-    return $response;
-});
-
 $app->get('/infos', function (Request $request, Response $response, $args) {
     $hero = new Personage('John-Mickael Jr.', 100);
 

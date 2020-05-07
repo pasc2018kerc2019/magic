@@ -15,13 +15,13 @@
     let getUrl = window.location;
     let protocole = getUrl.protocol;
     let host = getUrl.host;
-    let url = `${protocole}//${host}/infos`;
+    let url = `${protocole}//${host}/index.php/infos`;
 
     fetch(url).then(response => {
       return response.json();
     }).then(json => {
       hero.innerText = json.hero;
-    }).catch();        
+    });     
 
   </script>
 </body>
